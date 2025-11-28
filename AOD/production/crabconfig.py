@@ -87,7 +87,8 @@ if __name__ == '__main__':
     config.JobType.disableAutomaticOutputCollection = False # automatic recognition of output files
     #config.JobType.outputFiles = ['ppW3MuNu_Run3Summer22EEwmLHEGS.root']
     config.JobType.allowUndistributedCMSSW = True
-    config.JobType.maxMemoryMB = 2500 # 2500 (default) 
+    config.JobType.maxMemoryMB = 5000 # 2500 is default for single core, can be increased up to 3000; for multi-thread safe rule is (N+1)*1000
+    config.JobType.numCores=4         # comment for single thread    
 
     config.section_('User')
 
