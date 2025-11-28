@@ -24,7 +24,7 @@ if __name__ == '__main__':
                         type=str, required=True,
                         help='input dataset from GS stage to use - DAS string')
     parser.add_argument('--process_name',
-                        type=str, default='WtoTauNu_Tauto3Mu',
+                        type=str, default='BplusTo3muNu',
                         help='process to simulate - default is tau3mu')
     parser.add_argument('--campaign',
                         choices= conditions.campaigns, default='Run3Summer22',
@@ -33,8 +33,8 @@ if __name__ == '__main__':
                         type=int, default=50000,
                         help='number of events to produce')
     parser.add_argument('-t', '--tag',
-                        type=str, default='MTau1950',
-                        help='tag for the production - use MTauxxxx for the mass of the tau in MeV')
+                        type=str, default='NoTag',
+                        help='tag for the production')
     parser.add_argument('-v', '--version',
                         type=str, default='v0',
                         help='Version of the production')
@@ -87,7 +87,7 @@ if __name__ == '__main__':
     config.JobType.disableAutomaticOutputCollection = False # automatic recognition of output files
     #config.JobType.outputFiles = ['ppW3MuNu_Run3Summer22EEwmLHEGS.root']
     config.JobType.allowUndistributedCMSSW = True
-    config.JobType.maxMemoryMB = 4000 # 2500 (default) # fixme: check if this is needed
+    config.JobType.maxMemoryMB = 2500 # 2500 (default) 
 
     config.section_('User')
 
